@@ -1,0 +1,32 @@
+{"level":"info","message":"Initializing database...","service":"property-backend","timestamp":"2025-06-11 23:45:33"}
+{"level":"info","message":"Database initialized successfully!","service":"property-backend","timestamp":"2025-06-11 23:45:34"}
+{"level":"info","message":"Tables created:","service":"property-backend","timestamp":"2025-06-11 23:45:34"}
+{"level":"info","message":"- users","service":"property-backend","timestamp":"2025-06-11 23:45:34"}
+{"level":"info","message":"Initializing database...","service":"property-backend","timestamp":"2025-06-11 23:49:45"}
+{"level":"info","message":"Database initialized successfully!","service":"property-backend","timestamp":"2025-06-11 23:49:45"}
+{"level":"info","message":"Tables created:","service":"property-backend","timestamp":"2025-06-11 23:49:45"}
+{"level":"info","message":"- users","service":"property-backend","timestamp":"2025-06-11 23:49:45"}
+{"level":"info","message":"Server running on port 3000 in development mode","service":"property-backend","timestamp":"2025-06-11 23:51:07"}
+{"level":"info","message":"API Documentation available at http://localhost:3000/api-docs","service":"property-backend","timestamp":"2025-06-11 23:51:07"}
+{"level":"info","message":"Server running on port 3000 in development mode","service":"property-backend","timestamp":"2025-06-11 23:55:51"}
+{"level":"info","message":"API Documentation available at http://localhost:3000/api-docs","service":"property-backend","timestamp":"2025-06-11 23:55:51"}
+{"level":"info","message":"Server running on port 3000 in development mode","service":"property-backend","timestamp":"2025-06-11 23:55:54"}
+{"level":"info","message":"API Documentation available at http://localhost:3000/api-docs","service":"property-backend","timestamp":"2025-06-11 23:55:54"}
+{"level":"info","message":"GET /api-docs - ::1","service":"property-backend","timestamp":"2025-06-11 23:56:00"}
+{"level":"info","message":"GET /api-docs/ - ::1","service":"property-backend","timestamp":"2025-06-11 23:56:00"}
+{"level":"info","message":"GET /api-docs/swagger-ui.css - ::1","service":"property-backend","timestamp":"2025-06-11 23:56:00"}
+{"level":"info","message":"GET /api-docs/swagger-ui-bundle.js - ::1","service":"property-backend","timestamp":"2025-06-11 23:56:00"}
+{"level":"info","message":"GET /api-docs/swagger-ui-standalone-preset.js - ::1","service":"property-backend","timestamp":"2025-06-11 23:56:00"}
+{"level":"info","message":"GET /api-docs/swagger-ui-init.js - ::1","service":"property-backend","timestamp":"2025-06-11 23:56:00"}
+{"level":"info","message":"GET /api-docs/favicon-32x32.png - ::1","service":"property-backend","timestamp":"2025-06-11 23:56:00"}
+{"level":"info","message":"POST /api/auth/register - ::1","service":"property-backend","timestamp":"2025-06-11 23:56:35"}
+{"level":"info","message":"POST /api/auth/register - ::1","service":"property-backend","timestamp":"2025-06-11 23:56:48"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"property-backend","timestamp":"2025-06-11 23:57:24"}
+{"level":"info","message":"Server running on port 3000 in development mode","service":"property-backend","timestamp":"2025-06-12 00:00:38"}
+{"level":"info","message":"API Documentation available at http://localhost:3000/api-docs","service":"property-backend","timestamp":"2025-06-12 00:00:38"}
+{"level":"info","message":"Server running on port 3000 in development mode","service":"property-backend","timestamp":"2025-06-12 00:00:41"}
+{"level":"info","message":"API Documentation available at http://localhost:3000/api-docs","service":"property-backend","timestamp":"2025-06-12 00:00:41"}
+{"level":"info","message":"Server running on port 3000 in development mode","service":"property-backend","timestamp":"2025-06-12 00:03:03"}
+{"level":"info","message":"API Documentation available at http://localhost:3000/api-docs","service":"property-backend","timestamp":"2025-06-12 00:03:03"}
+{"level":"info","message":"Server running on port 3000 in development mode","service":"property-backend","timestamp":"2025-06-12 00:03:25"}
+{"level":"info","message":"API Documentation available at http://localhost:3000/api-docs","service":"property-backend","timestamp":"2025-06-12 00:03:25"}
