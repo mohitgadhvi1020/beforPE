@@ -63,10 +63,24 @@ app.use('*', (req, res) => {
 // Error handling middleware
 app.use(errorHandler);
 
-// Start server
-app.listen(PORT, () => {
-  logger.info(`Server running on port ${PORT} in ${process.env.NODE_ENV} mode`);
-  logger.info(`API Documentation available at http://localhost:${PORT}/api-docs`);
-});
+// Initialize database and start server
+async function startServer() {
+  try {
+    // Initialize database tables
+    const { initDatabase } = await import('./src/utils/initDb.js');
+    await initDatabase();
+    
+    // Start server
+    app.listen(PORT, () => {
+      logger.info(`Server running on port ${PORT} in ${process.env.NODE_ENV} mode`);
+      logger.info(`API Documentation available at http://localhost:${PORT}/api-docs`);
+    });
+  } catch (error) {
+    logger.error('Failed to start server:', error);
+    process.exit(1);
+  }
+}
+
+startServer();
 
 export default app; 
