@@ -29,7 +29,7 @@ const protect = asyncHandler(async (req, res, next) => {
     // Get user from database
     const sql = await getDb();
     const users = await sql`
-      SELECT id, email, role, first_name, last_name, phone, is_active
+      SELECT id, email, role, first_name, last_name, phone, send_bird_id, is_active
       FROM users WHERE id = ${decoded.id} AND is_active = true
     `;
 

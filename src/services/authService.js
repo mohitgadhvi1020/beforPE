@@ -29,7 +29,7 @@ class AuthService {
   // Register new user
   async register(userData) {
     const sql = await getDb();
-    const { email, password, first_name, last_name, phone, is_agent } = userData;
+    const { email, password, first_name, last_name, phone, is_agent, send_bird_id } = userData;
 
     // Check if user already exists
     const existingUser = await sql`
@@ -47,9 +47,9 @@ class AuthService {
 
     // Create user
     const users = await sql`
-      INSERT INTO users (id, email, password, role, first_name, last_name, phone, is_active, created_at)
-      VALUES (${userId}, ${email}, ${hashedPassword}, ${role}, ${first_name}, ${last_name}, ${phone || null}, true, NOW())
-      RETURNING id, email, role, first_name, last_name, phone, is_active, created_at
+      INSERT INTO users (id, email, password, role, first_name, last_name, phone, send_bird_id, is_active, created_at)
+      VALUES (${userId}, ${email}, ${hashedPassword}, ${role}, ${first_name}, ${last_name}, ${phone || null}, ${send_bird_id || null}, true, NOW())
+      RETURNING id, email, role, first_name, last_name, phone, send_bird_id, is_active, created_at
     `;
 
     if (users.length === 0) {
@@ -110,7 +110,7 @@ class AuthService {
     const sql = await getDb();
     
     const users = await sql`
-      SELECT id, email, role, first_name, last_name, phone, is_active, created_at, last_login
+      SELECT id, email, role, first_name, last_name, phone, send_bird_id, is_active, created_at, last_login
       FROM users WHERE id = ${userId}
     `;
 
@@ -124,16 +124,17 @@ class AuthService {
   // Update user profile
   async updateProfile(userId, updateData) {
     const sql = await getDb();
-    const { first_name, last_name, phone } = updateData;
+    const { first_name, last_name, phone, send_bird_id } = updateData;
     
     const users = await sql`
       UPDATE users SET 
         first_name = ${first_name || sql`first_name`},
         last_name = ${last_name || sql`last_name`},
         phone = ${phone || sql`phone`},
+        send_bird_id = ${send_bird_id !== undefined ? send_bird_id : sql`send_bird_id`},
         updated_at = NOW()
       WHERE id = ${userId}
-      RETURNING id, email, role, first_name, last_name, phone, is_active, created_at, updated_at
+      RETURNING id, email, role, first_name, last_name, phone, send_bird_id, is_active, created_at, updated_at
     `;
 
     if (users.length === 0) {

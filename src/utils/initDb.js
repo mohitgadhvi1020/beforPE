@@ -17,6 +17,7 @@ async function initDatabase() {
         first_name VARCHAR(100) NOT NULL,
         last_name VARCHAR(100) NOT NULL,
         phone VARCHAR(20),
+        send_bird_id VARCHAR(255),
         is_active BOOLEAN DEFAULT true,
         created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
         updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
@@ -24,13 +25,30 @@ async function initDatabase() {
       )
     `;
 
-    // Create indexes if they don't exist
+    // Add send_bird_id column if it doesn't exist (for existing tables)
+    try {
+      await sql`
+        ALTER TABLE users ADD COLUMN IF NOT EXISTS send_bird_id VARCHAR(255)
+      `;
+      logger.info('Added send_bird_id column to existing users table');
+    } catch (error) {
+      // Column might already exist, which is fine
+      if (!error.message.includes('already exists')) {
+        logger.warn('Could not add send_bird_id column:', error.message);
+      }
+    }
+
+    // Create indexes if they don't exist (after ensuring columns exist)
     await sql`
       CREATE INDEX IF NOT EXISTS idx_users_email ON users (email)
     `;
 
     await sql`
       CREATE INDEX IF NOT EXISTS idx_users_role ON users (role)
+    `;
+
+    await sql`
+      CREATE INDEX IF NOT EXISTS idx_users_sendbird ON users (send_bird_id)
     `;
 
     logger.info('Database tables verified/created successfully');
