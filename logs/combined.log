@@ -101,3 +101,13 @@
 {"level":"info","message":"Checking database tables...","service":"property-backend","timestamp":"2025-06-12 00:31:57"}
 {"level":"info","message":"Added send_bird_id column to existing users table","service":"property-backend","timestamp":"2025-06-12 00:31:58"}
 {"level":"info","message":"Database tables verified/created successfully","service":"property-backend","timestamp":"2025-06-12 00:31:58"}
+{"level":"info","message":"Checking database tables...","service":"property-backend","timestamp":"2025-06-12 00:34:27"}
+{"level":"info","message":"Added send_bird_id column to existing users table","service":"property-backend","timestamp":"2025-06-12 00:34:28"}
+{"level":"info","message":"Database tables verified/created successfully","service":"property-backend","timestamp":"2025-06-12 00:34:28"}
+{"level":"info","message":"Checking database tables...","service":"property-backend","timestamp":"2025-06-12 00:36:15"}
+{"level":"info","message":"Added send_bird_id column to existing users table","service":"property-backend","timestamp":"2025-06-12 00:36:16"}
+{"level":"info","message":"Database tables verified/created successfully","service":"property-backend","timestamp":"2025-06-12 00:36:16"}
+{"level":"info","message":"Server running on port 3000 in development mode","service":"property-backend","timestamp":"2025-06-12 00:36:16"}
+{"level":"info","message":"API Documentation available at http://localhost:3000/api-docs","service":"property-backend","timestamp":"2025-06-12 00:36:16"}
+{"level":"info","message":"GET /health - ::1","service":"property-backend","timestamp":"2025-06-12 00:36:23"}
+{"level":"info","message":"POST /api/auth/register - ::1","service":"property-backend","timestamp":"2025-06-12 00:36:37"}
