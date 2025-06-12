@@ -1,18 +1,31 @@
 import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 
+// Dynamically determine the server URL based on environment
+const getServerUrl = () => {
+  if (process.env.NODE_ENV === 'production') {
+    // For production, try to get the URL from environment or use a default
+    return process.env.API_URL || 'https://property-backend-api-q8vb.onrender.com';
+  }
+  return 'http://localhost:3000';
+};
+
 const options = {
   definition: {
     openapi: '3.0.0',
     info: {
       title: 'Property Management API',
       version: '1.0.0',
-      description: 'A simple property management API with B2B and B2C support',
+      description: 'A comprehensive property management API with B2B and B2C support featuring 5 real estate agents and 20 diverse properties across the Bay Area.',
     },
     servers: [
       {
+        url: getServerUrl(),
+        description: process.env.NODE_ENV === 'production' ? 'Production server' : 'Development server',
+      },
+      {
         url: 'http://localhost:3000',
-        description: 'Development server',
+        description: 'Local development server',
       },
     ],
     components: {
