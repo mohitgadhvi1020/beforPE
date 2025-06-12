@@ -13,6 +13,7 @@ import { swaggerUi, specs } from './src/config/swagger.js';
 
 // Import routes
 import authRoutes from './src/routes/auth.js';
+import propertyRoutes from './src/routes/property.js';
 
 const app = express();
 const PORT = process.env.PORT || 6000;
@@ -51,6 +52,7 @@ app.get('/health', (req, res) => {
 
 // API Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/property', propertyRoutes);
 
 // 404 handler
 app.use('*', (req, res) => {
@@ -66,14 +68,25 @@ app.use(errorHandler);
 // Initialize database and start server
 async function startServer() {
   try {
-    // Initialize database tables
-    const { initDatabase } = await import('./src/utils/initDb.js');
-    await initDatabase();
+    // Only try to initialize PostgreSQL database if not using Firebase
+    if (process.env.DB_TYPE !== 'firebase') {
+      try {
+        const { initDatabase } = await import('./src/utils/initDb.js');
+        await initDatabase();
+        logger.info('Database initialized successfully');
+      } catch (dbError) {
+        logger.warn('Database initialization failed, but continuing to start server:', dbError.message);
+        logger.warn('Some features may not work without database connection');
+      }
+    } else {
+      logger.info('Using Firebase - skipping PostgreSQL database initialization');
+    }
     
-    // Start server
+    // Start server regardless of database status
     app.listen(PORT, () => {
       logger.info(`Server running on port ${PORT} in ${process.env.NODE_ENV} mode`);
       logger.info(`API Documentation available at http://localhost:${PORT}/api-docs`);
+      logger.info(`Database type: ${process.env.DB_TYPE || 'postgres'}`);
     });
   } catch (error) {
     logger.error('Failed to start server:', error);

@@ -51,6 +51,40 @@ async function initDatabase() {
       CREATE INDEX IF NOT EXISTS idx_users_sendbird ON users (send_bird_id)
     `;
 
+    // Create properties table if it doesn't exist
+    await sql`
+      CREATE TABLE IF NOT EXISTS properties (
+        id UUID PRIMARY KEY,
+        agent_user_id UUID NOT NULL REFERENCES users(id),
+        title VARCHAR(255) NOT NULL,
+        description TEXT NOT NULL,
+        property_type VARCHAR(50) NOT NULL CHECK (property_type IN ('apartment', 'house', 'condo', 'commercial')),
+        price DECIMAL(12, 2) NOT NULL,
+        location JSONB NOT NULL,
+        features JSONB,
+        images TEXT[],
+        status VARCHAR(20) NOT NULL DEFAULT 'available' CHECK (status IN ('available', 'pending', 'sold', 'rented')),
+        is_featured BOOLEAN DEFAULT false,
+        created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+        updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+      )
+    `;
+
+    // Create index on agent_user_id for faster lookups
+    await sql`
+      CREATE INDEX IF NOT EXISTS idx_properties_agent ON properties (agent_user_id)
+    `;
+
+    // Create index on property_type for filtering
+    await sql`
+      CREATE INDEX IF NOT EXISTS idx_properties_type ON properties (property_type)
+    `;
+
+    // Create index on status for filtering
+    await sql`
+      CREATE INDEX IF NOT EXISTS idx_properties_status ON properties (status)
+    `;
+
     logger.info('Database tables verified/created successfully');
     
   } catch (error) {

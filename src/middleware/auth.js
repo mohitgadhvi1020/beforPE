@@ -63,8 +63,16 @@ const authorize = (...roles) => {
   };
 };
 
-// Agent-specific middleware
-const agentOnly = authorize('agent');
+// Agent only middleware
+const agentOnly = (req, res, next) => {
+  if (req.user.role !== 'agent') {
+    return res.status(403).json({
+      success: false,
+      error: 'Only agents can access this route'
+    });
+  }
+  next();
+};
 
 // Customer-specific middleware
 const customerOnly = authorize('customer');
