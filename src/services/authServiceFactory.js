@@ -25,7 +25,7 @@ class AuthServiceMock {
 
   async register(userData) {
     const { v4: uuidv4 } = await import('uuid');
-    const { email, password, first_name, last_name, phone, is_agent, send_bird_id } = userData;
+    const { email, password, first_name, last_name, phone, is_agent, send_bird_id, send_bird_accessId } = userData;
 
     // Check if user already exists
     for (const [id, user] of this.users) {
@@ -47,6 +47,7 @@ class AuthServiceMock {
       last_name,
       phone: phone || null,
       send_bird_id: send_bird_id || null,
+      send_bird_accessId: send_bird_accessId || null,
       is_active: true,
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
@@ -102,11 +103,12 @@ class AuthServiceMock {
       throw new Error('Profile update failed');
     }
 
-    const { first_name, last_name, phone, send_bird_id } = updateData;
+    const { first_name, last_name, phone, send_bird_id, send_bird_accessId } = updateData;
     if (first_name !== undefined) user.first_name = first_name;
     if (last_name !== undefined) user.last_name = last_name;
     if (phone !== undefined) user.phone = phone;
     if (send_bird_id !== undefined) user.send_bird_id = send_bird_id;
+    if (send_bird_accessId !== undefined) user.send_bird_accessId = send_bird_accessId;
     user.updated_at = new Date().toISOString();
 
     this.users.set(userId, user);

@@ -288,3 +288,9 @@
 {"level":"info","message":"GET /api/property/agent/agent-5 - ::1","service":"property-backend","timestamp":"2025-06-13 02:49:04"}
 {"level":"info","message":"GET /api/property/listings - ::1","service":"property-backend","timestamp":"2025-06-13 02:49:52"}
 {"level":"info","message":"GET /api/property/agent/agent-2 - ::1","service":"property-backend","timestamp":"2025-06-13 02:50:28"}
+{"level":"error","message":"Database initialization failed: DATABASE_URL environment variable is required","service":"property-backend","stack":"Error: DATABASE_URL environment variable is required\n    at file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/config/database.js:6:9\n    at ModuleJob.run (node:internal/modules/esm/module_job:195:25)\n    at async ModuleLoader.import (node:internal/modules/esm/loader:337:24)\n    at async initDatabase (file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/utils/initDb.js:5:30)\n    at async startServer (file:///Users/mohitghanghaniya/BE%20FOR%20PF/server.js:75:9)","timestamp":"2025-06-14 01:40:05"}
+{"level":"warn","message":"Database initialization failed, but continuing to start server:","service":"property-backend","timestamp":"2025-06-14 01:40:05"}
+{"level":"warn","message":"Some features may not work without database connection","service":"property-backend","timestamp":"2025-06-14 01:40:05"}
+{"level":"info","message":"Server running on port 3000 in development mode","service":"property-backend","timestamp":"2025-06-14 01:40:05"}
+{"level":"info","message":"API Documentation available at http://localhost:3000/api-docs","service":"property-backend","timestamp":"2025-06-14 01:40:05"}
+{"level":"info","message":"Database type: mock","service":"property-backend","timestamp":"2025-06-14 01:40:05"}

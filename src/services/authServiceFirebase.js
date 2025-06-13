@@ -29,7 +29,7 @@ class AuthServiceFirebase {
   async register(userData) {
     try {
       const db = getDb();
-      const { email, password, first_name, last_name, phone, is_agent, send_bird_id } = userData;
+      const { email, password, first_name, last_name, phone, is_agent, send_bird_id, send_bird_accessId } = userData;
 
       // Check if user already exists
       const existingUserQuery = await db.collection(this.collection)
@@ -56,6 +56,7 @@ class AuthServiceFirebase {
         last_name,
         phone: phone || null,
         send_bird_id: send_bird_id || null,
+        send_bird_accessId: send_bird_accessId || null,
         is_active: true,
         created_at: new Date(),
         updated_at: new Date(),
@@ -148,7 +149,7 @@ class AuthServiceFirebase {
   async updateProfile(userId, updateData) {
     try {
       const db = getDb();
-      const { first_name, last_name, phone, send_bird_id } = updateData;
+      const { first_name, last_name, phone, send_bird_id, send_bird_accessId } = updateData;
       
       const updateFields = {
         updated_at: new Date()
@@ -158,6 +159,7 @@ class AuthServiceFirebase {
       if (last_name !== undefined) updateFields.last_name = last_name;
       if (phone !== undefined) updateFields.phone = phone;
       if (send_bird_id !== undefined) updateFields.send_bird_id = send_bird_id;
+      if (send_bird_accessId !== undefined) updateFields.send_bird_accessId = send_bird_accessId;
 
       await db.collection(this.collection).doc(userId).update(updateFields);
 

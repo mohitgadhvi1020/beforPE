@@ -40,7 +40,8 @@ class PropertyServiceFirebase {
         agent_last_name: agentData?.last_name,
         agent_email: agentData?.email,
         agent_phone: agentData?.phone,
-        agent_send_bird_id: agentData?.send_bird_id
+        agent_send_bird_id: agentData?.send_bird_id,
+        send_bird_accessId_agent: agentData?.send_bird_accessId
       };
     } catch (error) {
       throw new Error(`Failed to create property: ${error.message}`);
@@ -106,7 +107,8 @@ class PropertyServiceFirebase {
           agent_last_name: agentData?.last_name,
           agent_email: agentData?.email,
           agent_phone: agentData?.phone,
-          agent_send_bird_id: agentData?.send_bird_id
+          agent_send_bird_id: agentData?.send_bird_id,
+          send_bird_accessId_agent: agentData?.send_bird_accessId
         });
       }
 
@@ -150,7 +152,8 @@ class PropertyServiceFirebase {
         agent_last_name: agentData?.last_name,
         agent_email: agentData?.email,
         agent_phone: agentData?.phone,
-        agent_send_bird_id: agentData?.send_bird_id
+        agent_send_bird_id: agentData?.send_bird_id,
+        send_bird_accessId_agent: agentData?.send_bird_accessId
       };
     } catch (error) {
       throw new Error(`Failed to fetch property: ${error.message}`);

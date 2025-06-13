@@ -669,7 +669,8 @@ class PropertyServiceMock {
         last_name: 'Agent',
         email: 'demo@example.com',
         phone: '+1234567890',
-        send_bird_id: 'demo_agent'
+        send_bird_id: 'demo_agent',
+        send_bird_accessId: 'demo_agent_access'
       };
 
       return {
@@ -678,7 +679,8 @@ class PropertyServiceMock {
         agent_last_name: agentData.last_name,
         agent_email: agentData.email,
         agent_phone: agentData.phone,
-        agent_send_bird_id: agentData.send_bird_id
+        agent_send_bird_id: agentData.send_bird_id,
+        send_bird_accessId_agent: agentData.send_bird_accessId
       };
     } catch (error) {
       throw new Error(`Failed to create property: ${error.message}`);
@@ -726,7 +728,8 @@ class PropertyServiceMock {
           last_name: 'Agent',
           email: 'demo@example.com',
           phone: '+1234567890',
-          send_bird_id: 'demo_agent'
+          send_bird_id: 'demo_agent',
+          send_bird_accessId: 'demo_agent_access'
         };
 
         return {
@@ -735,7 +738,8 @@ class PropertyServiceMock {
           agent_last_name: agentData.last_name,
           agent_email: agentData.email,
           agent_phone: agentData.phone,
-          agent_send_bird_id: agentData.send_bird_id
+          agent_send_bird_id: agentData.send_bird_id,
+          send_bird_accessId_agent: agentData.send_bird_accessId
         };
       });
 
@@ -768,7 +772,8 @@ class PropertyServiceMock {
         last_name: 'Agent',
         email: 'demo@example.com',
         phone: '+1234567890',
-        send_bird_id: 'demo_agent'
+        send_bird_id: 'demo_agent',
+        send_bird_accessId: 'demo_agent_access'
       };
 
       return {
@@ -777,7 +782,8 @@ class PropertyServiceMock {
         agent_last_name: agentData.last_name,
         agent_email: agentData.email,
         agent_phone: agentData.phone,
-        agent_send_bird_id: agentData.send_bird_id
+        agent_send_bird_id: agentData.send_bird_id,
+        send_bird_accessId_agent: agentData.send_bird_accessId
       };
     } catch (error) {
       throw new Error(`Failed to fetch property: ${error.message}`);

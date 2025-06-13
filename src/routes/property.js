@@ -80,6 +80,9 @@ const router = express.Router();
  *         agent_send_bird_id:
  *           type: string
  *           description: Agent SendBird ID
+ *         send_bird_accessId_agent:
+ *           type: string
+ *           description: Agent SendBird Access ID
  *     PropertyRequest:
  *       type: object
  *       required: [title, description, property_type, price, location]
@@ -366,6 +369,212 @@ router.post('/', protect, agentOnly, asyncHandler(async (req, res) => {
     });
   } catch (error) {
     res.status(400).json({
+      success: false,
+      error: error.message
+    });
+  }
+}));
+
+/**
+ * @swagger
+ * /api/property/{id}:
+ *   get:
+ *     summary: Get property by ID
+ *     description: Retrieve a specific property by its ID
+ *     tags: [Properties]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Property ID
+ *     responses:
+ *       200:
+ *         description: Successfully retrieved property
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/PropertyResponse'
+ *       404:
+ *         description: Property not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ */
+// @desc    Get property by ID
+// @route   GET /api/property/:id
+// @access  Public
+router.get('/:id', asyncHandler(async (req, res) => {
+  try {
+    const propertyService = createPropertyService();
+    const property = await propertyService.getPropertyById(req.params.id);
+    
+    res.status(200).json({
+      success: true,
+      data: property
+    });
+  } catch (error) {
+    const statusCode = error.message.includes('not found') ? 404 : 400;
+    res.status(statusCode).json({
+      success: false,
+      error: error.message
+    });
+  }
+}));
+
+/**
+ * @swagger
+ * /api/property/{id}:
+ *   put:
+ *     summary: Update property
+ *     description: Update a property listing (agent only - can only update own properties)
+ *     tags: [Properties]
+ *     security:
+ *       - BearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Property ID
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/PropertyRequest'
+ *     responses:
+ *       200:
+ *         description: Property updated successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/PropertyResponse'
+ *       400:
+ *         description: Bad request or validation error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *       401:
+ *         description: Unauthorized - invalid or missing token
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *       403:
+ *         description: Forbidden - only agents can update properties
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *       404:
+ *         description: Property not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ */
+// @desc    Update property
+// @route   PUT /api/property/:id
+// @access  Private (Agent only - own properties)
+router.put('/:id', protect, agentOnly, asyncHandler(async (req, res) => {
+  const { error } = propertySchema.validate(req.body);
+  if (error) {
+    return res.status(400).json({
+      success: false,
+      error: error.details[0].message
+    });
+  }
+
+  try {
+    const propertyService = createPropertyService();
+    const property = await propertyService.updateProperty(req.params.id, req.user.id, req.body);
+    
+    res.status(200).json({
+      success: true,
+      data: property
+    });
+  } catch (error) {
+    let statusCode = 400;
+    if (error.message.includes('not found')) statusCode = 404;
+    if (error.message.includes('Unauthorized')) statusCode = 403;
+    
+    res.status(statusCode).json({
+      success: false,
+      error: error.message
+    });
+  }
+}));
+
+/**
+ * @swagger
+ * /api/property/{id}:
+ *   delete:
+ *     summary: Delete property
+ *     description: Delete a property listing (agent only - can only delete own properties)
+ *     tags: [Properties]
+ *     security:
+ *       - BearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Property ID
+ *     responses:
+ *       200:
+ *         description: Property deleted successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                 message:
+ *                   type: string
+ *       401:
+ *         description: Unauthorized - invalid or missing token
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *       403:
+ *         description: Forbidden - only agents can delete properties
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *       404:
+ *         description: Property not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ */
+// @desc    Delete property
+// @route   DELETE /api/property/:id
+// @access  Private (Agent only - own properties)
+router.delete('/:id', protect, agentOnly, asyncHandler(async (req, res) => {
+  try {
+    const propertyService = createPropertyService();
+    await propertyService.deleteProperty(req.params.id, req.user.id);
+    
+    res.status(200).json({
+      success: true,
+      message: 'Property deleted successfully'
+    });
+  } catch (error) {
+    let statusCode = 400;
+    if (error.message.includes('not found')) statusCode = 404;
+    if (error.message.includes('Unauthorized')) statusCode = 403;
+    
+    res.status(statusCode).json({
       success: false,
       error: error.message
     });

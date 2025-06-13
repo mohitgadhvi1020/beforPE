@@ -107,7 +107,8 @@ class PropertyService {
         u.last_name as agent_last_name,
         u.email as agent_email,
         u.phone as agent_phone,
-        u.send_bird_id as agent_send_bird_id
+        u.send_bird_id as agent_send_bird_id,
+        u.send_bird_accessId as send_bird_accessId_agent
       FROM properties p
       JOIN users u ON p.agent_user_id = u.id
       ${whereClause}
@@ -140,7 +141,8 @@ class PropertyService {
         u.last_name as agent_last_name,
         u.email as agent_email,
         u.phone as agent_phone,
-        u.send_bird_id as agent_send_bird_id
+        u.send_bird_id as agent_send_bird_id,
+        u.send_bird_accessId as send_bird_accessId_agent
       FROM properties p
       JOIN users u ON p.agent_user_id = u.id
       WHERE p.id = ${propertyId}

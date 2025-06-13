@@ -8,6 +8,7 @@ const registerSchema = Joi.object({
   last_name: Joi.string().required(),
   phone: Joi.string().optional(),
   send_bird_id: Joi.string().max(255).optional(),
+  send_bird_accessId: Joi.string().max(255).optional(),
   is_agent: Joi.boolean().required()
 });
 
