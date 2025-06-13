@@ -45,23 +45,26 @@ const customerProfileSchema = Joi.object({
   profile_image: Joi.string().uri().optional()
 });
 
-// Property validation schemas
+// Property validation schemas - Simplified with minimal required fields
 const propertySchema = Joi.object({
   title: Joi.string().required(),
-  description: Joi.string().required(),
-  property_type: Joi.string().valid('apartment', 'house', 'condo', 'commercial').required(),
-  price: Joi.number().min(0).required(),
+  description: Joi.string().optional(),
+  property_type: Joi.string().valid('apartment', 'house', 'condo', 'townhouse', 'commercial').optional(),
+  price: Joi.number().min(0).optional(),
   location: Joi.object({
-    address: Joi.string().required(),
-    city: Joi.string().required(),
-    state: Joi.string().required(),
-    country: Joi.string().required(),
-    postal_code: Joi.string().required(),
+    address: Joi.string().optional(),
+    city: Joi.string().optional(),
+    state: Joi.string().optional(),
+    country: Joi.string().optional(),
+    postal_code: Joi.string().optional(),
+    zip_code: Joi.string().optional(),
+    latitude: Joi.number().optional(),
+    longitude: Joi.number().optional(),
     coordinates: Joi.object({
-      lat: Joi.number().required(),
-      lng: Joi.number().required()
+      lat: Joi.number().optional(),
+      lng: Joi.number().optional()
     }).optional()
-  }).required(),
+  }).optional(),
   features: Joi.object({
     bedrooms: Joi.number().min(0).optional(),
     bathrooms: Joi.number().min(0).optional(),
@@ -69,10 +72,14 @@ const propertySchema = Joi.object({
     lot_size: Joi.number().min(0).optional(),
     year_built: Joi.number().min(1800).max(new Date().getFullYear()).optional(),
     parking_spaces: Joi.number().min(0).optional(),
+    parking: Joi.boolean().optional(),
+    garden: Joi.boolean().optional(),
+    garage: Joi.boolean().optional(),
+    balcony: Joi.boolean().optional(),
     amenities: Joi.array().items(Joi.string()).optional()
   }).optional(),
-  images: Joi.array().items(Joi.string().uri()).optional(),
-  status: Joi.string().valid('available', 'pending', 'sold', 'rented').default('available')
+  images: Joi.array().items(Joi.string()).optional(),
+  status: Joi.string().valid('available', 'pending', 'sold', 'rented', 'withdrawn').default('available')
 });
 
 // Connection validation schemas

@@ -17,10 +17,10 @@ class PropertyServiceFirebase {
         id: propertyId,
         agent_user_id: agentUserId,
         title: propertyData.title,
-        description: propertyData.description,
-        property_type: propertyData.property_type,
-        price: propertyData.price,
-        location: propertyData.location,
+        description: propertyData.description || '',
+        property_type: propertyData.property_type || 'house',
+        price: propertyData.price || 0,
+        location: propertyData.location || {},
         features: propertyData.features || {},
         images: propertyData.images || [],
         status: propertyData.status || 'available',
@@ -93,23 +93,10 @@ class PropertyServiceFirebase {
       const snapshot = await query.get();
       const properties = [];
 
-      // Get agent details for each property
+      // Get properties with agent details already included
       for (const doc of snapshot.docs) {
         const propertyData = doc.data();
-        
-        // Get agent details
-        const agentDoc = await db.collection(this.usersCollection).doc(propertyData.agent_user_id).get();
-        const agentData = agentDoc.exists ? agentDoc.data() : null;
-
-        properties.push({
-          ...propertyData,
-          agent_first_name: agentData?.first_name,
-          agent_last_name: agentData?.last_name,
-          agent_email: agentData?.email,
-          agent_phone: agentData?.phone,
-          agent_send_bird_id: agentData?.send_bird_id,
-          send_bird_accessId_agent: agentData?.send_bird_accessId
-        });
+        properties.push(propertyData);
       }
 
       // Get total count (approximate for pagination)
@@ -142,19 +129,9 @@ class PropertyServiceFirebase {
 
       const propertyData = doc.data();
       
-      // Get agent details
-      const agentDoc = await db.collection(this.usersCollection).doc(propertyData.agent_user_id).get();
-      const agentData = agentDoc.exists ? agentDoc.data() : null;
-
-      return {
-        ...propertyData,
-        agent_first_name: agentData?.first_name,
-        agent_last_name: agentData?.last_name,
-        agent_email: agentData?.email,
-        agent_phone: agentData?.phone,
-        agent_send_bird_id: agentData?.send_bird_id,
-        send_bird_accessId_agent: agentData?.send_bird_accessId
-      };
+      // Return the property data with agent information already included
+      // (agent info was stored directly in the property document during creation)
+      return propertyData;
     } catch (error) {
       throw new Error(`Failed to fetch property: ${error.message}`);
     }

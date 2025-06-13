@@ -71,8 +71,8 @@ async function startServer() {
     // Only try to initialize PostgreSQL database if not using Firebase
     if (process.env.DB_TYPE !== 'firebase') {
       try {
-        const { initDatabase } = await import('./src/utils/initDb.js');
-        await initDatabase();
+    const { initDatabase } = await import('./src/utils/initDb.js');
+    await initDatabase();
         logger.info('Database initialized successfully');
       } catch (dbError) {
         logger.warn('Database initialization failed, but continuing to start server:', dbError.message);
