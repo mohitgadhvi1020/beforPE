@@ -4,8 +4,8 @@ import swaggerUi from 'swagger-ui-express';
 // Dynamically determine the server URL based on environment
 const getServerUrl = () => {
   if (process.env.NODE_ENV === 'production') {
-    // For production, try to get the URL from environment or use a default
-    return process.env.API_URL || 'https://property-backend-api-q8vb.onrender.com';
+    // Use the correct production URL for your deployment
+    return process.env.API_URL || 'https://pf-chat.onrender.com';
   }
   return 'http://localhost:3000';
 };
@@ -16,7 +16,7 @@ const options = {
     info: {
       title: 'Property Management API',
       version: '1.0.0',
-      description: 'A comprehensive property management API with B2B and B2C support featuring 5 real estate agents and 20 diverse properties across the Bay Area.',
+      description: 'A comprehensive property management API with Firebase integration featuring real estate agents and properties with SendBird chat support.',
     },
     servers: [
       {
