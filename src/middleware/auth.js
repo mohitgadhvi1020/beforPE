@@ -1,10 +1,20 @@
 import jwt from 'jsonwebtoken';
 import asyncHandler from 'express-async-handler';
+import authService from '../services/authService.js';
 
 // Lazy import function for database
 async function getDb() {
-  const { default: sql } = await import('../config/database.js');
-  return sql;
+  try {
+    const { default: sql } = await import('../config/database.js');
+    return sql;
+  } catch (error) {
+    throw new Error('Database connection failed. Please check your database configuration.');
+  }
+}
+
+// Check if we should use mock service
+function shouldUseMock() {
+  return process.env.DB_TYPE === 'mock' || process.env.NODE_ENV === 'production';
 }
 
 // Protect routes - verify JWT token
@@ -26,21 +36,9 @@ const protect = asyncHandler(async (req, res, next) => {
     // Verify token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     
-    // Get user from database
-    const sql = await getDb();
-    const users = await sql`
-      SELECT id, email, role, first_name, last_name, phone, send_bird_id, is_active
-      FROM users WHERE id = ${decoded.id} AND is_active = true
-    `;
-
-    if (users.length === 0) {
-      return res.status(401).json({
-        success: false,
-        error: 'Not authorized to access this route'
-      });
-    }
-
-    req.user = users[0];
+    // Get user profile using auth service
+    const user = await authService.getProfile(decoded.id);
+    req.user = user;
     next();
   } catch (error) {
     return res.status(401).json({

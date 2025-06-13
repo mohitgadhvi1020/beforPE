@@ -111,3 +111,180 @@
 {"level":"info","message":"API Documentation available at http://localhost:3000/api-docs","service":"property-backend","timestamp":"2025-06-12 00:36:16"}
 {"level":"info","message":"GET /health - ::1","service":"property-backend","timestamp":"2025-06-12 00:36:23"}
 {"level":"info","message":"POST /api/auth/register - ::1","service":"property-backend","timestamp":"2025-06-12 00:36:37"}
+{"level":"info","message":"Initializing database...","service":"property-backend","timestamp":"2025-06-13 00:57:53"}
+{"level":"info","message":"Database initialized successfully!","service":"property-backend","timestamp":"2025-06-13 00:57:54"}
+{"level":"info","message":"Tables created:","service":"property-backend","timestamp":"2025-06-13 00:57:54"}
+{"level":"info","message":"- users","service":"property-backend","timestamp":"2025-06-13 00:57:54"}
+{"level":"info","message":"Checking database tables...","service":"property-backend","timestamp":"2025-06-13 00:58:02"}
+{"level":"info","message":"Added send_bird_id column to existing users table","service":"property-backend","timestamp":"2025-06-13 00:58:03"}
+{"level":"info","message":"Database tables verified/created successfully","service":"property-backend","timestamp":"2025-06-13 00:58:03"}
+{"level":"info","message":"Checking database tables...","service":"property-backend","timestamp":"2025-06-13 00:58:21"}
+{"level":"info","message":"Added send_bird_id column to existing users table","service":"property-backend","timestamp":"2025-06-13 00:58:22"}
+{"level":"info","message":"Database tables verified/created successfully","service":"property-backend","timestamp":"2025-06-13 00:58:23"}
+{"level":"info","message":"Server running on port 3234 in development mode","service":"property-backend","timestamp":"2025-06-13 00:58:23"}
+{"level":"info","message":"API Documentation available at http://localhost:3234/api-docs","service":"property-backend","timestamp":"2025-06-13 00:58:23"}
+{"level":"info","message":"GET /api-docs - ::1","service":"property-backend","timestamp":"2025-06-13 00:58:29"}
+{"level":"info","message":"GET /api-docs/ - ::1","service":"property-backend","timestamp":"2025-06-13 00:58:29"}
+{"level":"info","message":"GET /api-docs/swagger-ui.css - ::1","service":"property-backend","timestamp":"2025-06-13 00:58:29"}
+{"level":"info","message":"GET /api-docs/swagger-ui-bundle.js - ::1","service":"property-backend","timestamp":"2025-06-13 00:58:29"}
+{"level":"info","message":"GET /api-docs/swagger-ui-standalone-preset.js - ::1","service":"property-backend","timestamp":"2025-06-13 00:58:29"}
+{"level":"info","message":"GET /api-docs/swagger-ui-init.js - ::1","service":"property-backend","timestamp":"2025-06-13 00:58:29"}
+{"level":"info","message":"GET /api-docs/favicon-32x32.png - ::1","service":"property-backend","timestamp":"2025-06-13 00:58:29"}
+{"level":"info","message":"Checking database tables...","service":"property-backend","timestamp":"2025-06-13 01:47:42"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"db.hpqhhbbyzcuwmhssipuk.supabase.co","level":"error","message":"Database initialization failed: getaddrinfo ENOTFOUND db.hpqhhbbyzcuwmhssipuk.supabase.co","service":"property-backend","stack":"Error: getaddrinfo ENOTFOUND db.hpqhhbbyzcuwmhssipuk.supabase.co\n    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)\n    at cachedError (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/query.js:170:23)\n    at new Query (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/query.js:36:24)\n    at sql (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/index.js:112:11)\n    at initDatabase (file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/utils/initDb.js:11:14)","syscall":"getaddrinfo","timestamp":"2025-06-13 01:47:42"}
+{"level":"info","message":"Checking database tables...","service":"property-backend","timestamp":"2025-06-13 01:49:29"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"db.hpqhhbbyzcuwmhssipuk.supabase.co","level":"error","message":"Database initialization failed: getaddrinfo ENOTFOUND db.hpqhhbbyzcuwmhssipuk.supabase.co","service":"property-backend","stack":"Error: getaddrinfo ENOTFOUND db.hpqhhbbyzcuwmhssipuk.supabase.co\n    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)\n    at cachedError (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/query.js:170:23)\n    at new Query (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/query.js:36:24)\n    at sql (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/index.js:112:11)\n    at initDatabase (file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/utils/initDb.js:11:14)","syscall":"getaddrinfo","timestamp":"2025-06-13 01:49:29"}
+{"level":"info","message":"Initializing database...","service":"property-backend","timestamp":"2025-06-13 01:50:49"}
+{"level":"info","message":"Checking database tables...","service":"property-backend","timestamp":"2025-06-13 01:52:38"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"db.hpqhhbbyzcuwmhssipuk.supabase.co","level":"error","message":"Database initialization failed: getaddrinfo ENOTFOUND db.hpqhhbbyzcuwmhssipuk.supabase.co","service":"property-backend","stack":"Error: getaddrinfo ENOTFOUND db.hpqhhbbyzcuwmhssipuk.supabase.co\n    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)\n    at cachedError (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/query.js:170:23)\n    at new Query (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/query.js:36:24)\n    at sql (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/index.js:112:11)\n    at initDatabase (file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/utils/initDb.js:11:14)","syscall":"getaddrinfo","timestamp":"2025-06-13 01:52:38"}
+{"level":"info","message":"Checking database tables...","service":"property-backend","timestamp":"2025-06-13 01:55:01"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"db.hpqhhbbyzcuwmhssipuk.supabase.co","level":"error","message":"Database initialization failed: getaddrinfo ENOTFOUND db.hpqhhbbyzcuwmhssipuk.supabase.co","service":"property-backend","stack":"Error: getaddrinfo ENOTFOUND db.hpqhhbbyzcuwmhssipuk.supabase.co\n    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)\n    at cachedError (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/query.js:170:23)\n    at new Query (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/query.js:36:24)\n    at sql (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/index.js:112:11)\n    at initDatabase (file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/utils/initDb.js:11:14)","syscall":"getaddrinfo","timestamp":"2025-06-13 01:55:01"}
+{"level":"info","message":"Checking database tables...","service":"property-backend","timestamp":"2025-06-13 02:02:52"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"db.hpqhhbbyzcuwmhssipuk.supabase.co","level":"error","message":"Database initialization failed: getaddrinfo ENOTFOUND db.hpqhhbbyzcuwmhssipuk.supabase.co","service":"property-backend","stack":"Error: getaddrinfo ENOTFOUND db.hpqhhbbyzcuwmhssipuk.supabase.co\n    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)\n    at cachedError (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/query.js:170:23)\n    at new Query (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/query.js:36:24)\n    at sql (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/index.js:112:11)\n    at initDatabase (file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/utils/initDb.js:11:14)","syscall":"getaddrinfo","timestamp":"2025-06-13 02:02:52"}
+{"level":"info","message":"Checking database tables...","service":"property-backend","timestamp":"2025-06-13 02:05:52"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"db.hpqhhbbyzcuwmhssipuk.supabase.co","level":"error","message":"Database initialization failed: getaddrinfo ENOTFOUND db.hpqhhbbyzcuwmhssipuk.supabase.co","service":"property-backend","stack":"Error: getaddrinfo ENOTFOUND db.hpqhhbbyzcuwmhssipuk.supabase.co\n    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)\n    at cachedError (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/query.js:170:23)\n    at new Query (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/query.js:36:24)\n    at sql (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/index.js:112:11)\n    at initDatabase (file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/utils/initDb.js:11:14)","syscall":"getaddrinfo","timestamp":"2025-06-13 02:05:53"}
+{"level":"info","message":"Checking database tables...","service":"property-backend","timestamp":"2025-06-13 02:06:36"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"db.hpqhhbbyzcuwmhssipuk.supabase.co","level":"error","message":"Database initialization failed: getaddrinfo ENOTFOUND db.hpqhhbbyzcuwmhssipuk.supabase.co","service":"property-backend","stack":"Error: getaddrinfo ENOTFOUND db.hpqhhbbyzcuwmhssipuk.supabase.co\n    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)\n    at cachedError (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/query.js:170:23)\n    at new Query (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/query.js:36:24)\n    at sql (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/index.js:112:11)\n    at initDatabase (file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/utils/initDb.js:11:14)","syscall":"getaddrinfo","timestamp":"2025-06-13 02:06:37"}
+{"level":"warn","message":"Database initialization failed, but continuing to start server:","service":"property-backend","timestamp":"2025-06-13 02:06:37"}
+{"level":"warn","message":"Some features may not work without database connection","service":"property-backend","timestamp":"2025-06-13 02:06:37"}
+{"level":"info","message":"Server running on port 3000 in development mode","service":"property-backend","timestamp":"2025-06-13 02:06:37"}
+{"level":"info","message":"API Documentation available at http://localhost:3000/api-docs","service":"property-backend","timestamp":"2025-06-13 02:06:37"}
+{"level":"info","message":"GET /health - ::1","service":"property-backend","timestamp":"2025-06-13 02:06:39"}
+{"level":"info","message":"GET /api/property/listings - ::1","service":"property-backend","timestamp":"2025-06-13 02:07:41"}
+{"level":"info","message":"GET /api/property/agent/123e4567-e89b-12d3-a456-426614174000 - ::1","service":"property-backend","timestamp":"2025-06-13 02:07:49"}
+{"level":"info","message":"GET /health - ::1","service":"property-backend","timestamp":"2025-06-13 02:07:57"}
+{"level":"info","message":"POST /api/property - ::1","service":"property-backend","timestamp":"2025-06-13 02:08:15"}
+{"level":"info","message":"Checking database tables...","service":"property-backend","timestamp":"2025-06-13 02:08:48"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"db.hpqhhbbyzcuwmhssipuk.supabase.co","level":"error","message":"Database initialization failed: getaddrinfo ENOTFOUND db.hpqhhbbyzcuwmhssipuk.supabase.co","service":"property-backend","stack":"Error: getaddrinfo ENOTFOUND db.hpqhhbbyzcuwmhssipuk.supabase.co\n    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)\n    at cachedError (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/query.js:170:23)\n    at new Query (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/query.js:36:24)\n    at sql (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/index.js:112:11)\n    at initDatabase (file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/utils/initDb.js:11:14)","syscall":"getaddrinfo","timestamp":"2025-06-13 02:08:48"}
+{"level":"info","message":"Checking database tables...","service":"property-backend","timestamp":"2025-06-13 02:08:55"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"db.hpqhhbbyzcuwmhssipuk.supabase.co","level":"error","message":"Database initialization failed: getaddrinfo ENOTFOUND db.hpqhhbbyzcuwmhssipuk.supabase.co","service":"property-backend","stack":"Error: getaddrinfo ENOTFOUND db.hpqhhbbyzcuwmhssipuk.supabase.co\n    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)\n    at cachedError (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/query.js:170:23)\n    at new Query (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/query.js:36:24)\n    at sql (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/index.js:112:11)\n    at initDatabase (file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/utils/initDb.js:11:14)","syscall":"getaddrinfo","timestamp":"2025-06-13 02:08:55"}
+{"level":"info","message":"Checking database tables...","service":"property-backend","timestamp":"2025-06-13 02:09:45"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"db.hpqhhbbyzcuwmhssipuk.supabase.co","level":"error","message":"Database initialization failed: getaddrinfo ENOTFOUND db.hpqhhbbyzcuwmhssipuk.supabase.co","service":"property-backend","stack":"Error: getaddrinfo ENOTFOUND db.hpqhhbbyzcuwmhssipuk.supabase.co\n    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)\n    at cachedError (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/query.js:170:23)\n    at new Query (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/query.js:36:24)\n    at sql (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/index.js:112:11)\n    at initDatabase (file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/utils/initDb.js:11:14)","syscall":"getaddrinfo","timestamp":"2025-06-13 02:09:45"}
+{"level":"warn","message":"Database initialization failed, but continuing to start server:","service":"property-backend","timestamp":"2025-06-13 02:09:45"}
+{"level":"warn","message":"Some features may not work without database connection","service":"property-backend","timestamp":"2025-06-13 02:09:45"}
+{"level":"info","message":"Server running on port 3000 in development mode","service":"property-backend","timestamp":"2025-06-13 02:09:45"}
+{"level":"info","message":"API Documentation available at http://localhost:3000/api-docs","service":"property-backend","timestamp":"2025-06-13 02:09:45"}
+{"level":"info","message":"GET /ws - ::1","service":"property-backend","timestamp":"2025-06-13 02:09:50"}
+{"level":"info","message":"GET /ws - ::1","service":"property-backend","timestamp":"2025-06-13 02:10:07"}
+{"level":"info","message":"GET /ws - ::1","service":"property-backend","timestamp":"2025-06-13 02:10:40"}
+{"level":"info","message":"GET /ws - ::1","service":"property-backend","timestamp":"2025-06-13 02:11:45"}
+{"level":"info","message":"GET /ws - ::1","service":"property-backend","timestamp":"2025-06-13 02:13:54"}
+{"level":"info","message":"GET /ws - ::1","service":"property-backend","timestamp":"2025-06-13 02:18:11"}
+{"level":"info","message":"Checking database tables...","service":"property-backend","timestamp":"2025-06-13 02:22:01"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"db.hpqhhbbyzcuwmhssipuk.supabase.co","level":"error","message":"Database initialization failed: getaddrinfo ENOTFOUND db.hpqhhbbyzcuwmhssipuk.supabase.co","service":"property-backend","stack":"Error: getaddrinfo ENOTFOUND db.hpqhhbbyzcuwmhssipuk.supabase.co\n    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)\n    at cachedError (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/query.js:170:23)\n    at new Query (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/query.js:36:24)\n    at sql (file:///Users/mohitghanghaniya/BE%20FOR%20PF/node_modules/postgres/src/index.js:112:11)\n    at initDatabase (file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/utils/initDb.js:11:14)","syscall":"getaddrinfo","timestamp":"2025-06-13 02:22:01"}
+{"level":"info","message":"GET /health - ::1","service":"property-backend","timestamp":"2025-06-13 02:22:14"}
+{"level":"error","message":"Database initialization failed: DATABASE_URL environment variable is required","service":"property-backend","stack":"Error: DATABASE_URL environment variable is required\n    at file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/config/database.js:6:9\n    at ModuleJob.run (node:internal/modules/esm/module_job:195:25)\n    at async ModuleLoader.import (node:internal/modules/esm/loader:337:24)\n    at async initDatabase (file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/utils/initDb.js:5:30)\n    at async startServer (file:///Users/mohitghanghaniya/BE%20FOR%20PF/server.js:74:7)","timestamp":"2025-06-13 02:25:36"}
+{"level":"warn","message":"Database initialization failed, but continuing to start server:","service":"property-backend","timestamp":"2025-06-13 02:25:36"}
+{"level":"warn","message":"Some features may not work without database connection","service":"property-backend","timestamp":"2025-06-13 02:25:36"}
+{"level":"info","message":"Server running on port 3000 in development mode","service":"property-backend","timestamp":"2025-06-13 02:25:36"}
+{"level":"info","message":"API Documentation available at http://localhost:3000/api-docs","service":"property-backend","timestamp":"2025-06-13 02:25:36"}
+{"level":"info","message":"GET /ws - ::1","service":"property-backend","timestamp":"2025-06-13 02:26:44"}
+{"level":"info","message":"Using Firebase - skipping PostgreSQL database initialization","service":"property-backend","timestamp":"2025-06-13 02:27:16"}
+{"level":"info","message":"Server running on port 3000 in development mode","service":"property-backend","timestamp":"2025-06-13 02:27:16"}
+{"level":"info","message":"API Documentation available at http://localhost:3000/api-docs","service":"property-backend","timestamp":"2025-06-13 02:27:16"}
+{"level":"info","message":"Database type: firebase","service":"property-backend","timestamp":"2025-06-13 02:27:16"}
+{"level":"info","message":"GET /health - ::1","service":"property-backend","timestamp":"2025-06-13 02:27:31"}
+{"level":"info","message":"GET /api/property/listings - ::1","service":"property-backend","timestamp":"2025-06-13 02:27:56"}
+{"level":"info","message":"Using Firebase - skipping PostgreSQL database initialization","service":"property-backend","timestamp":"2025-06-13 02:30:29"}
+{"level":"info","message":"Server running on port 3000 in development mode","service":"property-backend","timestamp":"2025-06-13 02:30:29"}
+{"level":"info","message":"API Documentation available at http://localhost:3000/api-docs","service":"property-backend","timestamp":"2025-06-13 02:30:29"}
+{"level":"info","message":"Database type: firebase","service":"property-backend","timestamp":"2025-06-13 02:30:29"}
+{"level":"info","message":"GET /api/property/listings - ::1","service":"property-backend","timestamp":"2025-06-13 02:30:38"}
+{"level":"info","message":"Using Firebase - skipping PostgreSQL database initialization","service":"property-backend","timestamp":"2025-06-13 02:31:43"}
+{"level":"info","message":"Server running on port 3000 in development mode","service":"property-backend","timestamp":"2025-06-13 02:31:43"}
+{"level":"info","message":"API Documentation available at http://localhost:3000/api-docs","service":"property-backend","timestamp":"2025-06-13 02:31:43"}
+{"level":"info","message":"Database type: firebase","service":"property-backend","timestamp":"2025-06-13 02:31:43"}
+{"level":"info","message":"GET /api/property/listings - ::1","service":"property-backend","timestamp":"2025-06-13 02:32:06"}
+{"level":"info","message":"Using Firebase - skipping PostgreSQL database initialization","service":"property-backend","timestamp":"2025-06-13 02:33:05"}
+{"level":"info","message":"Server running on port 3000 in development mode","service":"property-backend","timestamp":"2025-06-13 02:33:05"}
+{"level":"info","message":"API Documentation available at http://localhost:3000/api-docs","service":"property-backend","timestamp":"2025-06-13 02:33:05"}
+{"level":"info","message":"Database type: firebase","service":"property-backend","timestamp":"2025-06-13 02:33:05"}
+{"level":"info","message":"GET /api/property/listings - ::1","service":"property-backend","timestamp":"2025-06-13 02:33:10"}
+{"level":"info","message":"Using Firebase - skipping PostgreSQL database initialization","service":"property-backend","timestamp":"2025-06-13 02:35:10"}
+{"level":"info","message":"Server running on port 3000 in development mode","service":"property-backend","timestamp":"2025-06-13 02:35:10"}
+{"level":"info","message":"API Documentation available at http://localhost:3000/api-docs","service":"property-backend","timestamp":"2025-06-13 02:35:10"}
+{"level":"info","message":"Database type: firebase","service":"property-backend","timestamp":"2025-06-13 02:35:10"}
+{"level":"info","message":"GET /api/property/listings - ::1","service":"property-backend","timestamp":"2025-06-13 02:35:13"}
+{"level":"info","message":"GET /health - ::1","service":"property-backend","timestamp":"2025-06-13 02:35:19"}
+{"level":"error","message":"Database initialization failed: DATABASE_URL environment variable is required","service":"property-backend","stack":"Error: DATABASE_URL environment variable is required\n    at file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/config/database.js:6:9\n    at ModuleJob.run (node:internal/modules/esm/module_job:195:25)\n    at async ModuleLoader.import (node:internal/modules/esm/loader:337:24)\n    at async initDatabase (file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/utils/initDb.js:5:30)\n    at async startServer (file:///Users/mohitghanghaniya/BE%20FOR%20PF/server.js:75:9)","timestamp":"2025-06-13 02:36:20"}
+{"level":"warn","message":"Database initialization failed, but continuing to start server:","service":"property-backend","timestamp":"2025-06-13 02:36:20"}
+{"level":"warn","message":"Some features may not work without database connection","service":"property-backend","timestamp":"2025-06-13 02:36:20"}
+{"level":"info","message":"Server running on port 3000 in development mode","service":"property-backend","timestamp":"2025-06-13 02:36:20"}
+{"level":"info","message":"API Documentation available at http://localhost:3000/api-docs","service":"property-backend","timestamp":"2025-06-13 02:36:20"}
+{"level":"info","message":"Database type: mock","service":"property-backend","timestamp":"2025-06-13 02:36:20"}
+{"level":"info","message":"GET /api/property/listings - ::1","service":"property-backend","timestamp":"2025-06-13 02:36:22"}
+{"level":"error","message":"Database initialization failed: DATABASE_URL environment variable is required","service":"property-backend","stack":"Error: DATABASE_URL environment variable is required\n    at file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/config/database.js:6:9\n    at ModuleJob.run (node:internal/modules/esm/module_job:195:25)\n    at async ModuleLoader.import (node:internal/modules/esm/loader:337:24)\n    at async initDatabase (file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/utils/initDb.js:5:30)\n    at async startServer (file:///Users/mohitghanghaniya/BE%20FOR%20PF/server.js:75:9)","timestamp":"2025-06-13 02:37:05"}
+{"level":"warn","message":"Database initialization failed, but continuing to start server:","service":"property-backend","timestamp":"2025-06-13 02:37:05"}
+{"level":"warn","message":"Some features may not work without database connection","service":"property-backend","timestamp":"2025-06-13 02:37:05"}
+{"level":"info","message":"Server running on port 3000 in development mode","service":"property-backend","timestamp":"2025-06-13 02:37:05"}
+{"level":"info","message":"API Documentation available at http://localhost:3000/api-docs","service":"property-backend","timestamp":"2025-06-13 02:37:05"}
+{"level":"info","message":"Database type: mock","service":"property-backend","timestamp":"2025-06-13 02:37:05"}
+{"level":"info","message":"GET /api/property/listings - ::1","service":"property-backend","timestamp":"2025-06-13 02:37:07"}
+{"level":"info","message":"GET /api/property/agent/agent-1 - ::1","service":"property-backend","timestamp":"2025-06-13 02:37:13"}
+{"level":"info","message":"POST /api/property - ::1","service":"property-backend","timestamp":"2025-06-13 02:37:31"}
+{"level":"info","message":"GET /api/property/listings - ::1","service":"property-backend","timestamp":"2025-06-13 02:38:03"}
+{"level":"error","message":"Database initialization failed: DATABASE_URL environment variable is required","service":"property-backend","stack":"Error: DATABASE_URL environment variable is required\n    at file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/config/database.js:6:9\n    at ModuleJob.run (node:internal/modules/esm/module_job:195:25)\n    at async ModuleLoader.import (node:internal/modules/esm/loader:337:24)\n    at async initDatabase (file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/utils/initDb.js:5:30)\n    at async startServer (file:///Users/mohitghanghaniya/BE%20FOR%20PF/server.js:75:9)","timestamp":"2025-06-13 02:38:14"}
+{"level":"warn","message":"Database initialization failed, but continuing to start server:","service":"property-backend","timestamp":"2025-06-13 02:38:14"}
+{"level":"warn","message":"Some features may not work without database connection","service":"property-backend","timestamp":"2025-06-13 02:38:14"}
+{"level":"info","message":"Server running on port 3000 in development mode","service":"property-backend","timestamp":"2025-06-13 02:38:14"}
+{"level":"info","message":"API Documentation available at http://localhost:3000/api-docs","service":"property-backend","timestamp":"2025-06-13 02:38:14"}
+{"level":"info","message":"Database type: mock","service":"property-backend","timestamp":"2025-06-13 02:38:14"}
+{"level":"info","message":"GET /api/property/listings - ::1","service":"property-backend","timestamp":"2025-06-13 02:38:17"}
+{"level":"info","message":"GET /api/property/agent/agent-1 - ::1","service":"property-backend","timestamp":"2025-06-13 02:38:23"}
+{"level":"info","message":"GET /api/property/agent/agent-2 - ::1","service":"property-backend","timestamp":"2025-06-13 02:38:28"}
+{"level":"info","message":"GET /api-docs - ::1","service":"property-backend","timestamp":"2025-06-13 02:38:33"}
+{"level":"info","message":"GET /api-docs/ - ::1","service":"property-backend","timestamp":"2025-06-13 02:38:59"}
+{"level":"info","message":"GET /api-docs/swagger-ui.css - ::1","service":"property-backend","timestamp":"2025-06-13 02:38:59"}
+{"level":"info","message":"GET /api-docs/swagger-ui-bundle.js - ::1","service":"property-backend","timestamp":"2025-06-13 02:38:59"}
+{"level":"info","message":"GET /api-docs/swagger-ui-init.js - ::1","service":"property-backend","timestamp":"2025-06-13 02:38:59"}
+{"level":"info","message":"GET /api-docs/swagger-ui-standalone-preset.js - ::1","service":"property-backend","timestamp":"2025-06-13 02:38:59"}
+{"level":"info","message":"GET /api-docs/favicon-32x32.png - ::1","service":"property-backend","timestamp":"2025-06-13 02:39:00"}
+{"level":"error","message":"Database initialization failed: DATABASE_URL environment variable is required","service":"property-backend","stack":"Error: DATABASE_URL environment variable is required\n    at file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/config/database.js:6:9\n    at ModuleJob.run (node:internal/modules/esm/module_job:195:25)\n    at async ModuleLoader.import (node:internal/modules/esm/loader:337:24)\n    at async initDatabase (file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/utils/initDb.js:5:30)\n    at async startServer (file:///Users/mohitghanghaniya/BE%20FOR%20PF/server.js:75:9)","timestamp":"2025-06-13 02:41:15"}
+{"level":"warn","message":"Database initialization failed, but continuing to start server:","service":"property-backend","timestamp":"2025-06-13 02:41:15"}
+{"level":"warn","message":"Some features may not work without database connection","service":"property-backend","timestamp":"2025-06-13 02:41:15"}
+{"level":"info","message":"Server running on port 3000 in development mode","service":"property-backend","timestamp":"2025-06-13 02:41:15"}
+{"level":"info","message":"API Documentation available at http://localhost:3000/api-docs","service":"property-backend","timestamp":"2025-06-13 02:41:15"}
+{"level":"info","message":"Database type: mock","service":"property-backend","timestamp":"2025-06-13 02:41:15"}
+{"level":"info","message":"GET /api-docs/ - ::1","service":"property-backend","timestamp":"2025-06-13 02:41:18"}
+{"level":"info","message":"GET /health - ::1","service":"property-backend","timestamp":"2025-06-13 02:41:24"}
+{"level":"info","message":"GET /api-docs/ - ::1","service":"property-backend","timestamp":"2025-06-13 02:41:29"}
+{"level":"info","message":"GET /api-docs/swagger-ui.css - ::1","service":"property-backend","timestamp":"2025-06-13 02:41:29"}
+{"level":"info","message":"GET /api-docs/swagger-ui-bundle.js - ::1","service":"property-backend","timestamp":"2025-06-13 02:41:29"}
+{"level":"info","message":"GET /api-docs/swagger-ui-standalone-preset.js - ::1","service":"property-backend","timestamp":"2025-06-13 02:41:29"}
+{"level":"info","message":"GET /api-docs/swagger-ui-init.js - ::1","service":"property-backend","timestamp":"2025-06-13 02:41:29"}
+{"level":"info","message":"GET /api/property/listings - ::1","service":"property-backend","timestamp":"2025-06-13 02:41:39"}
+{"level":"error","message":"Database initialization failed: DATABASE_URL environment variable is required","service":"property-backend","stack":"Error: DATABASE_URL environment variable is required\n    at file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/config/database.js:6:9\n    at ModuleJob.run (node:internal/modules/esm/module_job:195:25)\n    at async ModuleLoader.import (node:internal/modules/esm/loader:337:24)\n    at async initDatabase (file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/utils/initDb.js:5:30)\n    at async startServer (file:///Users/mohitghanghaniya/BE%20FOR%20PF/server.js:75:9)","timestamp":"2025-06-13 02:44:51"}
+{"level":"warn","message":"Database initialization failed, but continuing to start server:","service":"property-backend","timestamp":"2025-06-13 02:44:51"}
+{"level":"warn","message":"Some features may not work without database connection","service":"property-backend","timestamp":"2025-06-13 02:44:51"}
+{"level":"info","message":"Server running on port 3000 in development mode","service":"property-backend","timestamp":"2025-06-13 02:44:51"}
+{"level":"info","message":"API Documentation available at http://localhost:3000/api-docs","service":"property-backend","timestamp":"2025-06-13 02:44:51"}
+{"level":"info","message":"Database type: mock","service":"property-backend","timestamp":"2025-06-13 02:44:51"}
+{"level":"info","message":"GET /api/property/listings - ::1","service":"property-backend","timestamp":"2025-06-13 02:44:54"}
+{"level":"info","message":"GET /api/property/agent/agent-1 - ::1","service":"property-backend","timestamp":"2025-06-13 02:45:00"}
+{"level":"info","message":"GET /api/property/agent/agent-2 - ::1","service":"property-backend","timestamp":"2025-06-13 02:45:06"}
+{"level":"info","message":"GET /api/property/agent/agent-3 - ::1","service":"property-backend","timestamp":"2025-06-13 02:45:15"}
+{"level":"info","message":"GET /api/property/agent/agent-4 - ::1","service":"property-backend","timestamp":"2025-06-13 02:45:20"}
+{"level":"info","message":"GET /api/property/agent/agent-5 - ::1","service":"property-backend","timestamp":"2025-06-13 02:45:26"}
+{"level":"info","message":"GET /api/property/listings - ::1","service":"property-backend","timestamp":"2025-06-13 02:45:33"}
+{"level":"info","message":"GET /api-docs/ - ::1","service":"property-backend","timestamp":"2025-06-13 02:45:52"}
+{"level":"info","message":"GET /api-docs/swagger-ui.css - ::1","service":"property-backend","timestamp":"2025-06-13 02:45:52"}
+{"level":"info","message":"GET /api-docs/swagger-ui-bundle.js - ::1","service":"property-backend","timestamp":"2025-06-13 02:45:52"}
+{"level":"info","message":"GET /api-docs/swagger-ui-standalone-preset.js - ::1","service":"property-backend","timestamp":"2025-06-13 02:45:52"}
+{"level":"info","message":"GET /api-docs/swagger-ui-init.js - ::1","service":"property-backend","timestamp":"2025-06-13 02:45:52"}
+{"level":"info","message":"GET /api-docs/favicon-32x32.png - ::1","service":"property-backend","timestamp":"2025-06-13 02:45:53"}
+{"level":"info","message":"GET /api/property/listings - ::1","service":"property-backend","timestamp":"2025-06-13 02:45:59"}
+{"level":"error","message":"Database initialization failed: DATABASE_URL environment variable is required","service":"property-backend","stack":"Error: DATABASE_URL environment variable is required\n    at file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/config/database.js:6:9\n    at ModuleJob.run (node:internal/modules/esm/module_job:195:25)\n    at async ModuleLoader.import (node:internal/modules/esm/loader:337:24)\n    at async initDatabase (file:///Users/mohitghanghaniya/BE%20FOR%20PF/src/utils/initDb.js:5:30)\n    at async startServer (file:///Users/mohitghanghaniya/BE%20FOR%20PF/server.js:75:9)","timestamp":"2025-06-13 02:48:29"}
+{"level":"warn","message":"Database initialization failed, but continuing to start server:","service":"property-backend","timestamp":"2025-06-13 02:48:29"}
+{"level":"warn","message":"Some features may not work without database connection","service":"property-backend","timestamp":"2025-06-13 02:48:29"}
+{"level":"info","message":"Server running on port 3000 in development mode","service":"property-backend","timestamp":"2025-06-13 02:48:29"}
+{"level":"info","message":"API Documentation available at http://localhost:3000/api-docs","service":"property-backend","timestamp":"2025-06-13 02:48:29"}
+{"level":"info","message":"Database type: mock","service":"property-backend","timestamp":"2025-06-13 02:48:29"}
+{"level":"info","message":"GET /api/property/listings - ::1","service":"property-backend","timestamp":"2025-06-13 02:48:32"}
+{"level":"info","message":"GET /api/property/listings - ::1","service":"property-backend","timestamp":"2025-06-13 02:48:40"}
+{"level":"info","message":"GET /api/property/agent/agent-1 - ::1","service":"property-backend","timestamp":"2025-06-13 02:48:46"}
+{"level":"info","message":"GET /api/property/agent/agent-2 - ::1","service":"property-backend","timestamp":"2025-06-13 02:48:50"}
+{"level":"info","message":"GET /api/property/agent/agent-3 - ::1","service":"property-backend","timestamp":"2025-06-13 02:48:54"}
+{"level":"info","message":"GET /api/property/agent/agent-4 - ::1","service":"property-backend","timestamp":"2025-06-13 02:49:00"}
+{"level":"info","message":"GET /api/property/agent/agent-5 - ::1","service":"property-backend","timestamp":"2025-06-13 02:49:04"}
+{"level":"info","message":"GET /api/property/listings - ::1","service":"property-backend","timestamp":"2025-06-13 02:49:52"}
+{"level":"info","message":"GET /api/property/agent/agent-2 - ::1","service":"property-backend","timestamp":"2025-06-13 02:50:28"}

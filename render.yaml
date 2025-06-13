@@ -16,8 +16,17 @@ services:
         value: 900000
       - key: RATE_LIMIT_MAX_REQUESTS
         value: 100
+      - key: DB_TYPE
+        value: firebase
+      - key: PORT
+        value: 3000
+      - key: FIREBASE_PROJECT_ID
+        value: property-backend-12169
+      - key: GOOGLE_APPLICATION_CREDENTIALS_JSON
+        sync: false
 
-databases:
-  - name: property-db
-    databaseName: property_management
-    user: property_user 
+# Remove the databases section since we're using mock service for now
+# databases:
+#   - name: property-db
+#     databaseName: property_management
+#     user: property_user 

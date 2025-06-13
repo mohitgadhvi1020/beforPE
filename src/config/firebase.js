@@ -20,12 +20,35 @@ function initializeFirebase() {
     console.log('Initializing Firebase with project ID:', projectId);
     
     if (!admin.apps.length) {
-      // For development, we'll use a simple initialization
-      // This works with Firebase CLI authentication
+      let credential;
+      
+      // Check if we have service account credentials (for production)
+      if (process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON) {
+        try {
+          const serviceAccount = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
+          credential = admin.credential.cert(serviceAccount);
+          console.log('Using service account credentials');
+        } catch (error) {
+          console.error('Failed to parse service account JSON:', error.message);
+          throw new Error('Invalid service account credentials');
+        }
+      } else if (process.env.NODE_ENV === 'production') {
+        // In production without credentials, we can't proceed
+        throw new Error('Firebase service account credentials required in production');
+      } else {
+        // For development, try application default credentials
+        try {
+          credential = admin.credential.applicationDefault();
+          console.log('Using application default credentials');
+        } catch (error) {
+          console.log('Application default credentials not available, trying without credentials');
+          credential = undefined;
+        }
+      }
+
       admin.initializeApp({
-        projectId: projectId,
-        // Use default credentials from Firebase CLI
-        credential: admin.credential.applicationDefault()
+        credential: credential,
+        projectId: projectId
       });
     }
 
@@ -35,23 +58,7 @@ function initializeFirebase() {
     return db;
   } catch (error) {
     console.error('Firebase initialization failed:', error.message);
-    
-    // Fallback: try without credentials for testing
-    try {
-      console.log('Trying fallback initialization...');
-      if (!admin.apps.length) {
-        admin.initializeApp({
-          projectId: process.env.FIREBASE_PROJECT_ID
-        });
-      }
-      db = admin.firestore();
-      initialized = true;
-      console.log('Firebase initialized with fallback method');
-      return db;
-    } catch (fallbackError) {
-      console.error('Fallback initialization also failed:', fallbackError.message);
-      throw new Error('Firebase initialization failed. Please check your Firebase setup.');
-    }
+    throw new Error(`Firebase initialization failed: ${error.message}`);
   }
 }
 
