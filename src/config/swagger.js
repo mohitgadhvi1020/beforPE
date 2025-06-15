@@ -85,29 +85,53 @@ const options = {
             email: {
               type: 'string',
               format: 'email',
-              description: 'User email',
+              description: 'User email address',
+              example: 'jane.smith@example.com',
             },
             password: {
               type: 'string',
               minLength: 6,
               description: 'Password (minimum 6 characters)',
+              example: 'securepass123',
             },
             first_name: {
               type: 'string',
-              description: 'First name',
+              description: 'User first name',
+              example: 'Jane',
             },
             last_name: {
               type: 'string',
-              description: 'Last name',
+              description: 'User last name',
+              example: 'Smith',
             },
             phone: {
               type: 'string',
               description: 'Phone number (optional)',
+              example: '+1234567890',
             },
             is_agent: {
               type: 'boolean',
-              description: 'Whether user is an agent or customer',
+              description: 'Whether user is an agent (true) or customer (false)',
+              example: true,
             },
+            send_bird_id: {
+              type: 'string',
+              description: 'SendBird user ID (optional)',
+              example: 'sendbird_user_123',
+            },
+            send_bird_accessId: {
+              type: 'string',
+              description: 'SendBird access ID (optional)',
+              example: 'access_id_123',
+            },
+          },
+          example: {
+            email: 'jane.smith@example.com',
+            password: 'securepass123',
+            first_name: 'Jane',
+            last_name: 'Smith',
+            phone: '+1234567890',
+            is_agent: true,
           },
         },
         LoginRequest: {
@@ -117,12 +141,19 @@ const options = {
             email: {
               type: 'string',
               format: 'email',
-              description: 'User email',
+              description: 'User email address',
+              example: 'john.doe@example.com',
             },
             password: {
               type: 'string',
-              description: 'Password',
+              description: 'User password',
+              example: 'password123',
+              minLength: 1,
             },
+          },
+          example: {
+            email: 'john.doe@example.com',
+            password: 'password123',
           },
         },
         AuthResponse: {

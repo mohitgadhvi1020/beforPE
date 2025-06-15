@@ -70,4 +70,4 @@ test-*.js
 
 # Firebase
 firebase-debug.log
-.firebase/ 
+.firebase/ .env

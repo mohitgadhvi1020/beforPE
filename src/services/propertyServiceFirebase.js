@@ -40,8 +40,8 @@ class PropertyServiceFirebase {
         agent_last_name: agentData?.last_name,
         agent_email: agentData?.email,
         agent_phone: agentData?.phone,
-        agent_send_bird_id: agentData?.send_bird_id,
-        send_bird_accessId_agent: agentData?.send_bird_accessId
+        agent_send_bird_id: agentData?.send_bird_id || `sendbird_${agentData?.first_name?.toLowerCase() || 'agent'}_${agentUserId.substring(0, 8)}`,
+        send_bird_accessId_agent: agentData?.send_bird_accessId || `access_${agentUserId.substring(0, 12)}`
       };
     } catch (error) {
       throw new Error(`Failed to create property: ${error.message}`);
@@ -93,10 +93,23 @@ class PropertyServiceFirebase {
       const snapshot = await query.get();
       const properties = [];
 
-      // Get properties with agent details already included
+      // Get properties with agent details
       for (const doc of snapshot.docs) {
         const propertyData = doc.data();
-        properties.push(propertyData);
+        
+        // Fetch agent details for each property
+        const agentDoc = await db.collection(this.usersCollection).doc(propertyData.agent_user_id).get();
+        const agentData = agentDoc.exists ? agentDoc.data() : null;
+        
+        properties.push({
+          ...propertyData,
+          agent_first_name: agentData?.first_name,
+          agent_last_name: agentData?.last_name,
+          agent_email: agentData?.email,
+          agent_phone: agentData?.phone,
+          agent_send_bird_id: agentData?.send_bird_id || `sendbird_${agentData?.first_name?.toLowerCase() || 'agent'}_${propertyData.agent_user_id.substring(0, 8)}`,
+          send_bird_accessId_agent: agentData?.send_bird_accessId || `access_${propertyData.agent_user_id.substring(0, 12)}`
+        });
       }
 
       // Get total count (approximate for pagination)
@@ -129,9 +142,19 @@ class PropertyServiceFirebase {
 
       const propertyData = doc.data();
       
-      // Return the property data with agent information already included
-      // (agent info was stored directly in the property document during creation)
-      return propertyData;
+      // Fetch agent details
+      const agentDoc = await db.collection(this.usersCollection).doc(propertyData.agent_user_id).get();
+      const agentData = agentDoc.exists ? agentDoc.data() : null;
+      
+      return {
+        ...propertyData,
+        agent_first_name: agentData?.first_name,
+        agent_last_name: agentData?.last_name,
+        agent_email: agentData?.email,
+        agent_phone: agentData?.phone,
+        agent_send_bird_id: agentData?.send_bird_id || `sendbird_${agentData?.first_name?.toLowerCase() || 'agent'}_${propertyData.agent_user_id.substring(0, 8)}`,
+        send_bird_accessId_agent: agentData?.send_bird_accessId || `access_${propertyData.agent_user_id.substring(0, 12)}`
+      };
     } catch (error) {
       throw new Error(`Failed to fetch property: ${error.message}`);
     }

@@ -11,6 +11,7 @@ const router = express.Router();
  * /api/auth/register:
  *   post:
  *     summary: Register a new user
+ *     description: Create a new user account (agent or customer) and receive JWT token
  *     tags: [Authentication]
  *     requestBody:
  *       required: true
@@ -18,6 +19,13 @@ const router = express.Router();
  *         application/json:
  *           schema:
  *             $ref: '#/components/schemas/RegisterRequest'
+ *           example:
+ *             email: "jane.smith@example.com"
+ *             password: "securepass123"
+ *             first_name: "Jane"
+ *             last_name: "Smith"
+ *             phone: "+1234567890"
+ *             is_agent: true
  *     responses:
  *       201:
  *         description: User registered successfully
@@ -25,12 +33,28 @@ const router = express.Router();
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/AuthResponse'
+ *             example:
+ *               success: true
+ *               data:
+ *                 user:
+ *                   id: "456e7890-e89b-12d3-a456-426614174001"
+ *                   email: "jane.smith@example.com"
+ *                   role: "agent"
+ *                   first_name: "Jane"
+ *                   last_name: "Smith"
+ *                   phone: "+1234567890"
+ *                   is_active: true
+ *                   created_at: "2023-01-01T00:00:00.000Z"
+ *                 token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
  *       400:
- *         description: Bad request
+ *         description: Bad request - validation error or user already exists
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/ErrorResponse'
+ *             example:
+ *               success: false
+ *               error: "User with this email already exists"
  */
 router.post('/register', asyncHandler(async (req, res) => {
   const { error } = registerSchema.validate(req.body);
@@ -61,6 +85,7 @@ router.post('/register', asyncHandler(async (req, res) => {
  * /api/auth/login:
  *   post:
  *     summary: Login user
+ *     description: Authenticate user with email and password to receive JWT token
  *     tags: [Authentication]
  *     requestBody:
  *       required: true
@@ -68,6 +93,9 @@ router.post('/register', asyncHandler(async (req, res) => {
  *         application/json:
  *           schema:
  *             $ref: '#/components/schemas/LoginRequest'
+ *           example:
+ *             email: "john.doe@example.com"
+ *             password: "password123"
  *     responses:
  *       200:
  *         description: User logged in successfully
@@ -75,12 +103,37 @@ router.post('/register', asyncHandler(async (req, res) => {
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/AuthResponse'
+ *             example:
+ *               success: true
+ *               data:
+ *                 user:
+ *                   id: "123e4567-e89b-12d3-a456-426614174000"
+ *                   email: "john.doe@example.com"
+ *                   role: "agent"
+ *                   first_name: "John"
+ *                   last_name: "Doe"
+ *                   phone: "+1234567890"
+ *                   is_active: true
+ *                   created_at: "2023-01-01T00:00:00.000Z"
+ *                 token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+ *       400:
+ *         description: Bad request - validation error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *             example:
+ *               success: false
+ *               error: "\"email\" must be a valid email"
  *       401:
  *         description: Invalid credentials
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/ErrorResponse'
+ *             example:
+ *               success: false
+ *               error: "Invalid email or password"
  */
 router.post('/login', asyncHandler(async (req, res) => {
   const { error } = loginSchema.validate(req.body);
